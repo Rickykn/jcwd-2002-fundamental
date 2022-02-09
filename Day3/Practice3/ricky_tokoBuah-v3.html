@@ -1,0 +1,42 @@
+<script>
+  const items = ["Leci", "Apel", "Jeruk", "Mangga"];
+  const itemsPrices = [7000, 5000, 3000, 10000];
+  const itemQty = [0, 0, 0, 0];
+
+  let menus = "Menu :\n";
+  let choose;
+
+  for (let i = 0; i < items.length; i++) {
+    menus += `${i + 1}. ${items[i]} || Rp.${itemsPrices[i].toLocaleString()}\n`;
+  }
+
+  menus += `${items.length + 1}. Checkout`;
+
+  do {
+    choose = parseInt(prompt(menus));
+
+    if (choose == items.length + 1) {
+      break;
+    }
+
+    let userMenuInputIndex = choose - 1;
+
+    let selectrdProductItem = items[userMenuInputIndex];
+    let selectrdProductPRices = itemsPrices[userMenuInputIndex];
+
+    let quantity = parseInt(prompt(`Mau Beli berapa ${selectrdProductItem}?`));
+
+    itemQty[userMenuInputIndex] = quantity;
+  } while (true);
+
+  let cart = "";
+  let totalPrice = 0;
+  for (let i = 0; i < items.length; i++) {
+    cart += `${items[i]} x ${itemQty[i]} -> Rp. ${
+      itemQty[i] * itemsPrices[i]
+    }\n`;
+    totalPrice += itemQty[i] * itemsPrices[i];
+  }
+  cart += `Total Price: Rp. ${totalPrice}`;
+  alert(cart);
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Data</title>
+  </head>
+  <body>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+    <table>
+      <!-- header untuk table -->
+      <thead>
+        <!-- table row -->
+        <tr>
+          <!-- table heading -->
+          <th>No.</th>
+          <th>Name</th>
+          <th>Occupation</th>
+          <th>Gender</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <!-- data atau body table -->
+      <tbody id="tableData"></tbody>
+      <!-- footer table -->
+      <tfoot>
+        <tr>
+          <td></td>
+          <td>
+            <input id="nameInput" type="text" />
+          </td>
+          <td>
+            <!-- <input id="occupationInput" type="text" /> -->
+            <select id="occupationInput">
+              <option>Software Engineer</option>
+              <option>UI/UX</option>
+              <option>Data Scientist</option>
+              <option>Digital Marketer</option>
+            </select>
+          </td>
+          <td>
+            <input
+              checked
+              name="gender"
+              value="Pria"
+              type="radio"
+              id="genderPria"
+            />
+            <label for="genderPria">Pria</label>
+
+            <input
+              name="gender"
+              value="Wanita"
+              type="radio"
+              id="genderWanita"
+            />
+            <label for="genderWanita">Wanita</label>
+          </td>
+          <td>
+            <button onclick="addData()">Add</button>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <script src="ricky_index.js"></script>
+  </body>
+</html>

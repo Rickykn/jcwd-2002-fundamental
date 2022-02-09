@@ -1,0 +1,57 @@
+<script>
+
+    let kendaraan = prompt("Jenis Kendaraan : ")
+    let durasi = parseInt(prompt("Durasi Parkir : "))
+    
+    if (kendaraan === 'mobil' || kendaraan === 'motor') {
+        
+        if (kendaraan === 'mobil') {
+            let biayaPertama = 5000
+            let biayaTotal = 0
+            let biayaTambahan = 0
+            let selisihJam = 0
+            let maxMobil = 50000
+            if (durasi <= 2) {
+                if ( durasi <= 0) {
+                    alert("Durasi invalid")
+                }else{
+                    biayaTotal = biayaPertama
+                }
+            } else {
+                selisihJam = durasi - 2
+                biayaTambahan = selisihJam * 2000
+                biayaTotal = biayaPertama + biayaTambahan
+            }
+            if (biayaTotal > maxMobil) {
+                biayaTotal = maxMobil
+            }
+            alert("Biaya Parkir Anda = Rp " + biayaTotal)
+        }
+        else{
+            let biayaPertamaMotor = 3000
+            let biayaMotorTotal = 0
+            let biayaTambahanMotor = 0
+            let selisihJamMotor = 0
+            let maxMotor = 30000
+            if (durasi <= 2) {
+                if(durasi <= 0) {
+                    alert("Durasi invalid")
+                } else {
+                    biayaMotorTotal = biayaPertamaMotor
+                }
+            } else {
+                selisihJamMotor = durasi - 2
+                biayaTambahanMotor = selisihJamMotor * 1000
+                biayaMotorTotal = biayaPertamaMotor + biayaTambahanMotor
+            }
+
+            if (biayaMotorTotal >= maxMotor) {
+                biayaMotorTotal = maxMotor
+            }
+            alert("Biaya Parkir Anda = Rp " + biayaMotorTotal)
+        }
+    } else {
+        alert("Kendaraan Invalid")
+    }
+
+</script>

@@ -1,0 +1,57 @@
+<script>
+  let ulang = true;
+  while (ulang === true) {
+    let durasi = 0;
+    let kendaraan = 0;
+    do {
+      kendaraan = parseInt(
+        prompt(`Jenis Kendaraan
+        1. mobil
+        2. motor
+        3. exit`)
+      );
+    } while (!(kendaraan == 1 || kendaraan == 2 || kendaraan == 3));
+
+    let totalBiayaParkir = 0;
+
+    if (kendaraan === 1 || kendaraan === 2) {
+      do {
+        durasi = parseInt(prompt("Durasi Parkir"));
+      } while (durasi < 0);
+
+      if (durasi > 0) {
+        let biayaPertama;
+        let biayaPerJam;
+        let max;
+
+        if (kendaraan === 1) {
+          biayaPertama = 5000;
+          biayaPerJam = 2000;
+          max = 50000;
+        } else if (kendaraan === 2) {
+          biayaPertama = 3000;
+          biayaPerJam = 1000;
+          max = 30000;
+        }
+        if (durasi <= 2) {
+          totalBiayaParkir = biayaPertama;
+        } else if (durasi > 2) {
+          totalBiayaParkir = biayaPertama + biayaPerJam * (durasi - 2);
+        }
+        if (totalBiayaParkir > max) {
+          totalBiayaParkir = max;
+        }
+        alert(
+          `Total biaya parkir anda adalah: Rp. ${totalBiayaParkir.toLocaleString()}`
+        );
+      } else {
+        alert(`Biaya Parkir Anda Gratis`);
+      }
+    } else if (kendaraan === 3) {
+      alert(`Thank You !`);
+      break;
+    }
+
+    ulang = confirm("Coba Lagi?");
+  }
+</script>
