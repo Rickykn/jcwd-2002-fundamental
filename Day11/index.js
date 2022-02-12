@@ -17,4 +17,9 @@ const duplicateFilter = (arr, callback) => {
       resultArr.push(arr[i]);
     }
   }
+  return resultArr;
 };
+
+let result = duplicateFilter(number, (val) => val > 6);
+
+console.log(result);
